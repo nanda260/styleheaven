@@ -1,17 +1,15 @@
-# Gunakan image PHP dengan Apache sudah include
 FROM php:8.2-apache
 
-# Install ekstensi mysqli supaya bisa konek database
 RUN docker-php-ext-install mysqli
 
-# Copy semua file ke folder html Apache
+# Copy semua file
 COPY . /var/www/html/
 
-# Pastikan index.php ada di /var/www/html
-WORKDIR /var/www/html
+# Ubah DocumentRoot Apache ke folder main/
+RUN echo "DocumentRoot /var/www/html/main" > /etc/apache2/sites-available/000-default.conf
 
-# Buka port 80
+WORKDIR /var/www/html/main
+
 EXPOSE 80
 
-# Ini sebenarnya otomatis, tapi bisa tambahkan untuk jaga-jaga:
 CMD ["apache2-foreground"]
