@@ -1,4 +1,8 @@
 # STYLEHEAVEN
+
+![1](https://github.com/user-attachments/assets/4fbb0da9-f837-45ef-ad28-730d3f9ef5ae)![2](https://github.com/user-attachments/assets/0548e9d7-c775-402c-bb75-2645a040c732)
+
+
 Temukan gayamu di StyleHeaven!
 Website fashion yang bukan cuma jualan pakaian yang di sini kamu bisa langsung shop by looks dari para model kece yang tampil di halaman kami. Enggak perlu bingung mix & match, cukup klik tampilan yang kamu suka dan lengkapi koleksi gayamu dalam satu langkah!
 Style made simple, fashion made personal.
