@@ -1,8 +1,8 @@
 <?php 
-$host = 'localhost';
+$host = getenv("mysql.railway.internal");
 $user = 'root';
-$pass = '';
-$dbname = 'styleheaven';
+$pass = 'WNbouPbYKZthxuktxYDLUZQUvmfbZMyy';
+$dbname = 'railway';
 
 $conn = new mysqli($host, $user, $pass, $dbname);
 if ($conn->connect_error) {
