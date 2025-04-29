@@ -24,6 +24,6 @@ Link Github Project :
 https://github.com/nanda260/styleheaven
 
 Link Program Studi :
-pendidikan-ti.ft.unesa.ac.id/
+https://pendidikan-ti.ft.unesa.ac.id/
 
 #FashionWebsite #PemrogramanWeb #UNESA #WebDevelopment #TeknikUNESA
