@@ -1,4 +1,4 @@
-# styleheaven
+# STYLEHEAVEN
 Temukan gayamu di StyleHeaven!
 Website fashion yang bukan cuma jualan pakaian yang di sini kamu bisa langsung shop by looks dari para model kece yang tampil di halaman kami. Enggak perlu bingung mix & match, cukup klik tampilan yang kamu suka dan lengkapi koleksi gayamu dalam satu langkah!
 Style made simple, fashion made personal.
