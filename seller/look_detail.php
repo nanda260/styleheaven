@@ -17,32 +17,35 @@ $produk_result = mysqli_query($conn, $produk_query);
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title><?php echo $look['look_name']; ?> | StyleHeaven</title>
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            padding: 30px;
-            background: #f8f8f8;
-            color: #333;
+        .container {
+            width: 90%;
+            height: fit-content;
         }
 
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container h2 {
+            font-weight: 600;
+            font-style: italic;
         }
 
         .look-image {
-            display: block;
-            margin: 0 auto 30px;
             max-width: 350px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
 
         h3 {
             margin-bottom: 15px;
-            font-size: 1.4rem;
+            font-size: 1rem;
+            font-weight: 400;
+            font-style: italic;
         }
 
         .produk-list {
@@ -53,9 +56,11 @@ $produk_result = mysqli_query($conn, $produk_query);
 
         .produk-item {
             background: #fff;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+            padding-bottom: 10px;
+            border: 1px solid #000;
+            overflow: hidden;
             width: 170px;
             text-align: center;
             transition: transform 0.2s ease, box-shadow 0.3s ease;
@@ -63,14 +68,13 @@ $produk_result = mysqli_query($conn, $produk_query);
 
         .produk-item:hover {
             transform: translateY(-4px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         .produk-item img {
             width: 100%;
             height: 160px;
             object-fit: cover;
-            border-radius: 6px;
             margin-bottom: 10px;
         }
 
@@ -88,25 +92,41 @@ $produk_result = mysqli_query($conn, $produk_query);
             color: #e53935;
             font-weight: 600;
         }
+
+        .flexcontain {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .containproduklist {
+            margin-top: -10px;
+        }
     </style>
 </head>
+
 <body>
+    <div class="container">
+        <h2><?php echo $look['look_name']; ?></h2>
+        <div class="flexcontain">
+            <img src="../uploads/look/<?php echo $look['look_image']; ?>" alt="<?php echo $look['look_name']; ?>" class="look-image">
 
-<h2><?php echo $look['look_name']; ?></h2>
-<img src="../uploads/look/<?php echo $look['look_image']; ?>" alt="<?php echo $look['look_name']; ?>" class="look-image">
-
-<h3>Produk dalam Look ini:</h3>
-<div class="produk-list">
-<?php while($produk = mysqli_fetch_assoc($produk_result)) { ?>
-    <div class="produk-item">
-        <a href="../viewproduk.php?id=<?php echo $produk['id']; ?>">
-            <img src="../uploads/<?php echo $produk['gambar']; ?>" alt="<?php echo $produk['nama']; ?>">
-            <p><?php echo $produk['nama']; ?></p>
-            <p class="harga">Rp <?php echo number_format($produk['harga'], 0, ',', '.'); ?></p>
-        </a>
+            <div class="containproduklist">
+            <h3>Produk dalam Look</h3>
+            <div class="produk-list">
+                <?php while ($produk = mysqli_fetch_assoc($produk_result)) { ?>
+                    <div class="produk-item">
+                        <a href="../viewproduk.php?id=<?php echo $produk['id']; ?>" target="_blank">
+                            <img src="../uploads/<?php echo $produk['gambar']; ?>" alt="<?php echo $produk['nama']; ?>">
+                            <p><?php echo $produk['nama']; ?></p>
+                            <p class="harga">Rp <?php echo number_format($produk['harga'], 0, ',', '.'); ?></p>
+                        </a>
+                        </div>
+                <?php } ?>
+            </div>
+            </div>
+        </div>
     </div>
-<?php } ?>
-</div>
-
 </body>
+
 </html>

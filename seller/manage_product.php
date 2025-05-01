@@ -90,14 +90,36 @@ if (isset($_POST['submit-edit'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style/mng_product.css">
+    <style>
+        .btn-addlook {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            font-size: 14px;
+            font-family: Poppins, static;
+            text-decoration: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            border: 1px solid #000;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+                background-color: #000000;
+                color: #ffffff;
+            }
+
+            i {
+                padding-right: 2px;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <h2>Manage Product</h2>
         <button id="openForm" class="btn-add"><i class="bi bi-bag-plus-fill"></i> Add Product</button>
-        <a href="add_look.php" class="btn-add" ><i class="bi bi-person-lines-fill"></i> Add Look
-            </a>
+        <a href="add_look.php" class="btn-addlook"><i class="bi bi-person-lines-fill"></i> Add Look
+        </a>
         <div class="overlay" id="overlayForm">
             <div class="form-container">
                 <span class="close-btn" id="closeForm">&times;</span>
@@ -136,10 +158,10 @@ if (isset($_POST['submit-edit'])) {
                             <li style="color:rgba(255, 0, 0, 0.81);">Rp <?= number_format($p['harga'], 0, ',', '.'); ?> <span style="color: black;"> | </span><span style="color:rgb(86, 86, 86);"><?= $p['stok']; ?> pieces</span></li>
                             <li style="margin-top: 10px;"><button class="openEditForm" data-id="<?= $p['id'] ?>"><i class="bi bi-pencil-square"></i></button>
 
-                            <a href="deleteproduk.php?id=<?= $p['id'] ?>" 
-                            onclick="return confirm('Yakin hapus <?= htmlspecialchars($p['nama'], ENT_QUOTES) ?>?')">
-                            <i class="bi bi-trash"></i>
-                            </a>
+                                <a href="deleteproduk.php?id=<?= $p['id'] ?>"
+                                    onclick="return confirm('Yakin hapus <?= htmlspecialchars($p['nama'], ENT_QUOTES) ?>?')">
+                                    <i class="bi bi-trash"></i>
+                                </a>
                             </li>
                         </ul>
                         <p class="kategori"><?= $p['kategori']; ?></p>
